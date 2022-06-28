@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block title %}News details{% endblock %}
+
+{% block head %}
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/news_details.css')}}">
+{{ share.load() }}
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <div class="container">
+        <div class="common_page_title">
+            <a href="/az/news" class="back_to"> <i class="fa-solid fa-arrow-left-long"></i><span>Xəbərlər
+                    siyahısı</span> </a>
+            <p>Xəbərlər</p>
+            <h1>{{title}}</h1>
+            <time style="font-size:19px;">
+                {{adding}}
+            </time>
+        </div>
+        <div class="content">
+            <div class="main_wrap">
+                <div class="text_content">
+                    <p>
+                        {%if image != ''%}
+                    <p><img alt="" class="align_left" src="{{image}}" width="507"></p>
+                    {%endif%}
+                    {%for parag in content%}
+
+                    <p>{{parag}}</p>
+                    {%endfor%}
+                    </p>
+
+                    <!-- <p class="text-center">
+                        Share with:
+                        {{ share.create(sites= 'facebook , twitter ,linkedin, google') }}
+                    </p> -->
+                    <p>
+
+                    <div class="addthis_inline_share_toolbox"></div>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+</main>
+
+
+{% endblock %}
+
+{%block footer%}
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-62aa1d0bd440a86b"></script>
+{%endblock%}

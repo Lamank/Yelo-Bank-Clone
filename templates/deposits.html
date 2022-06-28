@@ -1,0 +1,168 @@
+{% extends 'base.html' %} {% block title %}Deposits{% endblock %} {% block head %}
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/deposits.css')}}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% endblock %} {% block content %}
+<main>
+    <div class="container">
+        <h3 class="text-center" id="main-header">Əmanətlər</h3>
+        <p class="text-center" id="cards-description">Pulunuz sizin üçün işləsin</p>
+        {%for deposit in deposits%}
+        <div class="d-flex" id="card">
+            <div class="col-lg-6 col-md-12 col-sm-12" id="card-content">
+                <h3 style="font-size:30px;font-weight: 600; margin-bottom:10px;">{{deposit.title}}</h3>
+                <p id="header-text">{{deposit.description}}</p>
+                <br>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <p class="sub-head">{{deposit.feature1}}</p>
+                        <p class="main-info">{{deposit.feature1_value}}</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <p class="sub-head">{{deposit.feature2}}</p>
+                        <p class="main-info">{{deposit.feature2_value}}</p>
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="sub-head">{{deposit.feature3}}</p>
+                        <p class="main-info">{{deposit.feature3_value}}</p>
+                    </div>
+                </div>
+                <br>
+                <div class="row" id="third-row">
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <button id="button-first"> Əmanət sifariş et</button>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12">
+                        <div id="row-div">
+                            <a><span id="for-more">Daha ətraflı</span></a>
+                            <a class="btn btn-floating m-1" href="#!" id="arrow-button" role="button"><i class="fa-solid fa-arrow-right" id = "right-arrow"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-12 col-sm-12">
+                <img src="{{deposit.image_url}}" alt="" id="card-image">
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12" id="card-right">
+
+            </div>
+        </div>
+        {%endfor%}
+
+        <div id="stories">
+            <span id="stories-head" style="margin-bottom: 20px;">Storilər</span>
+            <div id="button-second" style="margin-bottom: 10px;">
+                <h6 class="text-center">3</h6>
+            </div>
+            <br>
+            <div class="d-flex">
+                <div class="col-4" id="story" style="margin-left: 0; background-color: #0071C7;">
+                    <div class="row">
+                        <div class="col-6" id="story-content">
+                            <div id="story-head-div"><span id="story-head" style="color: #0071C7;">Kredit</span></div>
+                            <p id="story-desc">Xərclərini təxirə salma, hər zaman dəstək üçün Yelo Bank var</p>
+                        </div>
+                        <div class="col-5">
+                            <img src="{{url_for('static', filename = 'images/story-kredit.png')}}" alt="" id="story-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" id="story" style="background-color: #D82A34;">
+                    <div class="row">
+                        <div class="col-7" id="story-content">
+                            <div id="story-head-div"><span id="story-head" style="color: #D82A34;">Cashback</span></div>
+                            <p id="story-desc">600-dən çox partnyoru özündə birləşdirən Cashback proqramı</p>
+                        </div>
+                        <div class="col-4">
+                            <img src="{{url_for('static', filename = 'images/stories-6.png')}}" alt="" id="story-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4" id="story" style="background-color: #81BD5B;">
+                    <div class=" row">
+                        <div class="col-6" id="story-content">
+                            <div id="story-head-div"><span id="story-head" style="color: #81BD5B;">Yelo kart</span></div>
+                            <p id="story-desc">Yelo Kart hər əməliyyatda rahatlıq anlayışını dəyişəcək</p>
+                        </div>
+                        <div class="col-5">
+                            <img src="{{url_for('static', filename = 'images/stories-5-pic.png')}}" alt="" id="story-img">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="text">
+            <p style="line-height: 28px;">
+                <h6>Depozit nedir?</h6>Heç kəs əlavə qazanca, gəlirinin üstünə gəlir gəlməsinə etiraz etməz, elə deyil? Pulunuzun çoxalması üçün ən sərfəli və düzgün yol banka depozit qoymaqdır. Depozit nedir? Depozit - əmanətçi ilə bank arasında razılaşmaya
+                əsasən müəyyən müddətə və faiz dərəcələri müqabilində hüquqi və ya fiziki şəxslərin bankda yerləşdirmiş olduqları sərbəst pul vəsaitidir. Yəni bu vəsaiti banka həvalə edirsiniz, bank isə sizin timsalınızda digər depozit müştərilərindən
+                toplanmış vəsait hesabına kredit ayırır, siz isə pulunuzu depozit şəklində banka əmanət etdiyiniz üçün ondan illik faiz gəliri qazanırsınız. Depozitin ölkəmizdə ən geniş yayılmış növü müddətli depozitdir. Siz<span id="dots">...</span>
+                <span onclick="myFunction()" id="myBtn">Daha çox</span>
+                <span id="more"> məbləğinizi müəyyənləşdirilmiş müddətə
+                banka depozit kimi yerləşdirirsiniz, həmin müddət ərzində isə pulunuza faiz dərəcələri hesablanır. Əgər
+                depozit vəsaitini müddət yekunlaşmamış bankdan geri çəksəniz vəsaitin daha az faiz gəliri qazana bilərsiniz.
+                <h6>Depozit kalkulyatoru</h6> Müddətli
+                depozit əmanəti yerləşdirmək üçün bank axtarışındasınızsa, çox düşünmədən Yelo Bank-ı seçin! Pulunuz yastıq
+                altında, şüşə qabda, kitab arasında artan deyil, lakin Yelo Bank kimi daha etibarlı və yüksək faizli bankda
+                saxlamaqla pulunuzu
+                çoxalda bilərsiniz. Yelo Bank depozit yerləşdirmək istəyən müştərilərin rahatlığını təmin etmək üçün onlayn
+                depozit kalkulyatoru xidmətini aktiv edib. Saat və olduğunuz məkandan asılı olmayaraq internet şəbəkəsi
+                mövcud olan istənilən şəraitdə
+                Bankın rəsmi veb-saytında depozit kalkulyatoru ilə pulunuzun nə qədər gəlir gətirəcəyini hesablaya
+                bilərsiniz. Gəlirinizi hesablamaq üçün depozit üzrə kalkulyatorda depozit məbləği, müddəti və valyuta kimi
+                detalları daxil edirsiniz. Çevin
+                əmanət kalkulyatoru depozit gəlirinizi anındaca hesablayaraq nəticə ilə sizi tanış edəcək.
+                <h6> Depozit faizleri</h6> Pulunuzu gəlir qazandırmaq üçün ən etibarlı üsul depozit faizleri əldə etməkdir.
+                Bankda depozit hesabı açmaqla bir növ banka pulunuzu
+                kredit şəklində verirsiniz, bank isə bunun müqabilində sizə depozit faizleri ödəyir, nəticədə siz qazanclı
+                olursunuz. Hal-hazırda ən sərfəli depozit faizleri təqdim edən banklar arasında Yelo Bank ən populyarıdır.
+                Təsadüfi deyil ki, ötən
+                il depozit portfelinin artımına görə ən yüksək dinamika, təxminən 50% Yelo Bankın payına düşür. Müştərilər
+                pullarınızı depozit şəklində Yelo Bankda əmanət etməklə məbləğlərindən parlaq depozit faizleri qazanırlar.
+                Depozit hesabını vaxt
+                itirmədən bankın veb saytında aça bilərsiniz. Gəlirinizə və əmanət yerləşdirmək istədiyiniz müddətə hansı
+                depozit faizleri qazanacağınızı hesablamaq üçün vebsaytda avtomatlaşdırılmış əmanət kalkulyatoru da
+                mövcuddur.
+                <br>
+                <h6> Depozit hesablari</h6>
+                Bankda depozit hesablari açmaq nə üçün sərfəlidir? Bir çoxunuz bankda hesab açmaq haqda eşitmisiniz, əgər
+                siz külli miqdarda vəsaitə sahibsinizsə, onu depozit şəklində banka əmanət etməklə pulunuzu artırmaq yolunda
+                ən optimal addımı atmış
+                olarsınız. Bank və müştəri arasında hüquqi olaraq qarşılıqlı münasibətlər depozit hesablari açılması ilə
+                başlanılır. Bank sizin vəsaiti qorumaq və müəyyənləşdirilmiş müddət sonunda qabaqcadan təklif etdiyi depozit
+                faizini sizə təqdim etmək
+                öhdəliyini götürür. Yüksək faizli depozit hesablari təklif edən banklar arasında ən favorit seçim Yelo
+                Bank-dır. Keçən ilin depozit artım dinamikasında birinci yeri Yelo Bank bölüşür, əbəs yerə deyil, çünki
+                11%-dək yüksək faizli depozit
+                hesablari açan müştərilər Yelo-ya etibar edir.
+                <br>
+                <h6>Depozit</h6> Qısa zaman ərzində gəlir əldə etmək kim istəməz ki? İllərdir yığa bilmədiyiniz pulu Yelo
+                Bank-da depozit kimi yerləşdirməklə siz əziyyətsiz pulunu artıra bilərsiniz. Bunun üçün depozit
+                yerləşdirirsiniz vəssalam, zaman və pulunuz sizin lehinizə işləyir. Pulunuzu depozit şəklində Yelo Bank-a
+                yatırmaqla 11%-dək əlavə qazanc əldə edə bilərsiniz. Yelo Bank depozit şəklində həm pulunuzu etibarlı
+                ünvanda qorumaq, həm də pulunuzu
+                çoxaltmaq imkanı təqdim edir. Xərclədikdən sonra gec ola bilər, odur ki pul vəsaitinizi xərcləməmiş Yelo
+                Bank-da depozit şəklində yerləşdirin və zamanın axınına buraxın. Statistika da göstərir ki, depozit hesabı
+                açmaq üçün ən etibarlı
+                bank dedikdə, müştərilər Yelo Bankı seçir. Siz də Yelo Bank-ı seçin və seçilin, burada depozit hesabı açan
+                müştərilərə başqa loyallıq imtiyazları da təqdim edilir.
+            </span></p>
+        </div>
+    </div>
+</main>
+{% endblock %} {% block footer%}
+
+<script>
+    function myFunction() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var btnText = document.getElementById("myBtn");
+
+        if (dots.style.display === "none") {} else {
+            dots.style.display = "none";
+            btnText.style.display = "none";
+            moreText.style.display = "inline";
+        }
+    }
+</script>
+{% endblock %}

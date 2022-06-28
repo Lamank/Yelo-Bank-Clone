@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% block title %}online service{% endblock %} {% block head %}
+
+
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/online-services.css')}}"> {% endblock %} {% block content %}
+<main>
+    <h1 class="text-center" style="font-size: 35px; font-weight: 600;">Təşəkkür edirik</h1>
+    <div class="container">
+        <p class="text-center" style="font-size: 20px; margin-top:30px;">Ən qısa zamanda əməkdaşlarmız tərəfindən sorğunuza baxılacaq..</p>
+        <div class="row" style="margin: 10px 0 60px 0;">
+            <img src="{{url_for('static', filename = 'images/success_letter_icon.svg')}}" alt="" style="margin:30px auto; width: 90px;">
+            <div class="row" id="qr-section" style="margin-top: 80px;">
+                <div class="col-7">
+                    <div class="col">
+                        <h2 style="font-size:35px; font-weight:600; margin-bottom: 80px;">Mobil tətbiqi indi yüklə</h2>
+                    </div>
+                    <div class="col border" id="download-section">
+                        <div style="display: inline-block;" class="border-right">
+                            <a href="https://apps.apple.com/az/app/yelo/id1515449668"> <img src="{{url_for('static', filename = 'images/appstore_black_icon.svg')}}" alt=" " style="margin:0 15px;"></a>
+                        </div>
+                        <div style="display: inline-block;">
+                            <a href="https://play.google.com/store/apps/details?id=az.yelo.app&hl=ru"><img src="{{url_for('static', filename = 'images/googleplay_black_icon.svg')}}" alt=" " style="margin:0 15px; "></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 ">
+                    <img src="{{url_for('static', filename = 'images/qr-image.png')}}" alt=" " style="margin:20px auto auto 50px; ">
+                </div>
+            </div>
+
+        </div>
+</main>
+
+{% endblock %}
