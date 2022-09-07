@@ -1,0 +1,108 @@
+{% extends 'base.html' %} {% block title %}online service{% endblock %} {% block head %}
+
+
+<link rel="stylesheet" href="{{url_for('static', filename = 'css/online-services.css')}}"> {% endblock %} {% block content %}
+<main>
+    <h1 class="text-center" style="font-size: 50px; font-weight: 600;">Online kredit sifarişi</h1>
+    <div class="container">
+
+        <div class="row" style="margin: 10px 0 60px 0;">
+            <div class="col-7" id="loan-request-form" style="margin:0 auto">
+                <form action="" method="POST">
+                    {{form.csrf_token}}
+                    <div class="input-group">
+                        <div id="first-group">
+                            <div class="inputs">
+                                <div class="input-amount input-item">
+                                    <p>Aylıq əməkhaqqı</p>
+                                    {{form.salary(value="2500", class="range_result", id = "salary")}}
+                                    <div class="input-c">AZN</div>
+                                    <input type="range" min="350" max="5000" step="50" value="2500" style="--min: 350; --max: 5000;" class="range" id="salary">
+                                </div>
+                                <div class="input-term input-item">
+                                    <p>Kredit məbləği</p>
+                                    {{form.loan( value="15000", class="range_result", id = "loan")}}
+                                    <div class="input-c">AZN</div>
+                                    <input type="range" min="300" max="30000" step="100" value="15000" style="--min: 300; --max: 30000;" class="range" id="loan">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <div class="input-group" id="second-group">
+                            {{form.first_name(class="form-control", id = "first_name_input")}} {{form.last_name( class="form-control",id = "last_name_input")}}
+                        </div>
+
+                        <br>
+                        <div class="input-group" id="third-group">
+                            <div class="form-outline">
+                                {{form.workplace(id="workplace_input", class="form-control")}}
+
+                            </div>
+                            {{form.prefiks(class="form-control", id="prefiks_input")}} {{form.phone(class="form-control", id = "phone_input")}}
+                        </div>
+
+                        <hr style="margin:70px 0 30px 0 ;">
+
+                        <div class="row">
+                            <div class="col-1">
+                                <img src="{{url_for('static', filename = 'images/shield_gray_icon.svg')}}" alt="">
+                            </div>
+                            <div class="col-7">
+                                <p style="font-size:14px ;">“Sifariş et” basmaqla Azərbaycan Kredit Bürosundan kredit tarixçəsi və Asan finansdan fərdi məlumatların alınmasına razılıq verirəm.</p>
+                            </div>
+                            <div class="col-4">
+                                <button type="submit" id="button-submit"> Sifariş et</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row" id="qr-section" style="margin-top: 80px;">
+                <div class="col-7">
+                    <div class="col">
+                        <h2 style="font-size:35px; font-weight:600;">Mobil tətbiqi indi yüklə və tam onlayn kredit əldə et</h2>
+                    </div>
+                    <div class="col-11">
+                        <p class="text-secondary" style="font-size: 19px; margin:50px 0 50px 0; font-weight: 500;">Yelo App-də onlayn kredit sifarişi və bir çox üstünlüklər səni gözləyir. Banka gəlmədən kredit almaq istəyirsənsə, Yelo app-də sənin üçün təcili kredit almaq imkanı var. </p>
+                    </div>
+                    <div class="col border" id="download-section">
+                        <div style="display: inline-block;" class="border-right">
+                            <a href="https://apps.apple.com/az/app/yelo/id1515449668"> <img src="{{url_for('static', filename = 'images/appstore_black_icon.svg')}}" alt=" " style="margin:0 15px;"></a>
+                        </div>
+                        <div style="display: inline-block;">
+                            <a href="https://play.google.com/store/apps/details?id=az.yelo.app&hl=ru"><img src="{{url_for('static', filename = 'images/googleplay_black_icon.svg')}}" alt=" " style="margin:0 15px; "></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 ">
+                    <img src="{{url_for('static', filename = 'images/qr-image.png')}}" alt=" " style="margin:20px auto auto 50px; ">
+                </div>
+            </div>
+            <hr style="margin-top: 100px; ">
+            <div class="col-10 " style="margin: 50px auto; ">
+                <p class="text-center text-secondary " style="font-size:20px; ">Onlayn kredit müraciəti artıq daha asandır. İndi, olduğunuz yeri tərk etmədən internet vasitəsi ilə kredit sifariş edə bilərsiniz. Sifariş etmək üçün ilk öncə aylıq əməkhaqqınızı və istədiyiniz kredit məbləğini, daha sonra isə tələb olunan
+                    digər məlumatları (adınızı, soyadınızı, iş yerinizi və əlaqə nömrənizi) qeyd etməyiniz kifayətdir.
+                </p>
+                <p class="text-center text-secondary " style="font-size:20px; ">Artıq Yelo Bankdan kredit götürmək çox asan və tezdir. İndi Yelo app-i yükləyin və bank krediti sürətlə əldə edin. Sizə uyğun olan ən sərfəli şərtlərlə və aşağı faizlə online kredit sifarişi ilə evdən çıxmadan kredit əldə etmək fürsətindən
+                    istifadə edin! Onlayn istehlak krediti sifarişi xidmətimiz aktivdir. Bundan başqa Daşınmaz əmlak girovlu kredit, Əmanət təminatlı kredit və ya İpoteka krediti məhsullarımızla biz müştərilərimizə dəstək olmağa hazırıq.</p>
+                <p class="text-center text-secondary " style="font-size:20px; ">Siz Yelo Bankın saytında başqa kredit növləri ilə də tanış ola bilərsiniz. İstənilən online kredit sifarişi üçün bankımızın sosial media və digər kommunikasiya kanalları ilə müraciət edə bilərsiniz. Sizə tecili kredit lazımdırsa, onlayn
+                    kredit sifarişi müraciətinizə tez bir zamanda cavab veriləcəyindən əmin ola bilərsiniz.</p>
+            </div>
+
+
+        </div>
+</main>
+
+{% endblock %}{%block footer%}
+<!-- jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- slider js -->
+<script src="{{url_for('static', filename='docs/flickity.pkgd.min.js')}}"></script>
+<!-- Fontawesome -->
+<script src="https://kit.fontawesome.com/0187bb1c04.js" crossorigin="anonymous"></script>
+<!-- js -->
+<script src="{{url_for('static', filename='js/online-services.js')}}"></script>
+{% endblock %}

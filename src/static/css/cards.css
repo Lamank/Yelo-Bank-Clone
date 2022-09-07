@@ -1,0 +1,243 @@
+main {
+    margin-top: 150px;
+}
+
+#row-div:hover #for-more {
+    color: black;
+    cursor: pointer;
+}
+
+#row-div:hover #right-arrow {
+    color: black;
+    position: relative;
+    transition: transform0.3s ease;
+    transform: translateX(10px);
+    cursor: pointer;
+}
+
+#right-arrow {
+    font-size: 25px;
+}
+
+#right-arrow {
+    position: relative;
+    transition: transform0.3s ease;
+    transform: translateX(0px);
+    color: rgb(0, 0, 0, 0.5);
+    width: 10px;
+}
+
+#card {
+    border: 1px solid gainsboro;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#card-right {
+    height: 0;
+    width: 150px;
+    border-bottom: 150px solid #FFC628;
+    border-left: 100px solid transparent;
+}
+
+#card-content {
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#header-text {
+    color: rgb(0, 0, 0, 0.5);
+}
+
+.sub-head {
+    color: rgb(0, 0, 0, 0.5);
+    margin-bottom: 0%;
+}
+
+.main-info {
+    font-weight: 600;
+    font-size: large;
+}
+
+#for-more {
+    color: rgb(0, 0, 0, 0.5);
+    font-size: 19px;
+    font-weight: 600;
+}
+
+#row-div {
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+#third-row {
+    margin-top: 25px;
+}
+
+#stories-head {
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#stories {
+    margin-top: 100px;
+}
+
+#button-second {
+    display: inline-block;
+    width: 30px;
+    background-color: #FFC628;
+    color: white;
+    border-radius: 200px;
+    font-weight: bold;
+}
+
+@media(min-width:1000px) {
+    #cards-description {
+        margin-right: auto;
+        margin-left: auto;
+        color: rgb(0, 0, 0, 0.5);
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+    #card-image {
+        position: relative;
+        height: 370px;
+        width: auto;
+        padding-top: 30px;
+        padding-left: 150px;
+        z-index: 9;
+    }
+    #button-first {
+        color: white;
+        background-color: black;
+        width: 230px;
+        height: 60px;
+        transform: skew(-15deg);
+        font-weight: bold;
+    }
+    #button-first:hover {
+        color: black;
+        background-color: #FFC628;
+        border-color: #FFC628;
+        width: 230px;
+        height: 60px;
+        transform: skew(-15deg);
+        font-weight: bold;
+    }
+    #row-div {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+    #third-row {
+        margin-top: 25px;
+    }
+    #card-right {
+        position: relative;
+        border-bottom: 408px solid #FFC628;
+        border-left: 120px solid transparent;
+        border-right: 0px solid;
+        height: 0;
+        z-index: 1;
+    }
+    #cards-description {
+        margin-left: 120px;
+        margin-right: 120px;
+    }
+    #main-header {
+        font-size: 50px;
+    }
+}
+
+#myBtn {
+    color: blue;
+    cursor: pointer;
+}
+
+#more {
+    display: none;
+    color: rgb(0, 0, 0, 0.5);
+}
+
+#text {
+    color: rgb(0, 0, 0, 0.5);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    margin-top: 70px;
+    margin-bottom: 15px;
+}
+
+#story-head-div {
+    background-color: white;
+    color: white;
+    border-radius: 50px;
+    width: 90px;
+    font-weight: 600;
+}
+
+#story {
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+#story-head {
+    font-size: 13px;
+    margin: 15px;
+}
+
+#story-desc {
+    margin-top: 20px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#story-img {
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 20px;
+}
+
+#story-content {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 13px;
+}
+
+@media(max-width:1000px) {
+    #cards-description {
+        margin-right: auto;
+        margin-left: auto;
+        color: rgb(0, 0, 0, 0.5);
+        font-size: 12px;
+    }
+    #card-image {
+        visibility: hidden;
+    }
+    #button-first {
+        background-color: black;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 5px;
+        width: 100%;
+    }
+    #card-right {
+        height: 0;
+        width: 150px;
+        border-bottom: 150px solid #FFC628;
+        border-left: 100px solid transparent;
+        background-color: gainsboro;
+    }
+}
+
+#arrow-button {
+    border: none;
+}

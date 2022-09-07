@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block title %}News{% endblock %}
+
+{% block head %}
+
+
+
+<link rel="stylesheet" href="{{url_for('static', filename='css/news.css')}}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+    <div class="container">
+        <div class="page_title">
+            <h1>Xəbərlər</h1>
+        </div>
+        <div class="main_wrap">
+            <ul class="news_list">
+
+                {%for news in all_news%}
+                <li class="news_item">
+                    <a href="/az/news/{{news['slug']}}">
+                        <div class="news_l_desc">
+                            <b>{{news['title']}}</b>
+                            <div class="news_foot">
+                                <div>
+                                    Daha ətraflı <i class="fa-solid fa-arrow-right-long"></i>
+                                </div>
+
+                                <time>{{news['added_at']}}</time>
+                            </div>
+
+                        </div>
+                    </a>
+                </li>
+                {%endfor%}
+            </ul>
+
+
+            <div class="news_link">
+                <button type="button" id="more_news">
+                    Daha çox <i class="fa-solid fa-arrow-right-long"></i>
+                </button>
+                <!-- <a href='#' id="more_news">Daha çox <i class="fa-solid fa-arrow-right-long"></i></a> -->
+            </div>
+
+
+
+        </div>
+    </div>
+</main>
+{% endblock %}
+{% block footer%}
+<!-- jquery cdn -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="{{url_for('static', filename='js/news.js')}}"></script>
+{% endblock %}
